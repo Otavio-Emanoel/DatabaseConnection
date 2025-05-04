@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/globals.css">
     <title>OPAAAA</title>
 </head>
-<body>
-    
-    <p>AAAAAAAAAAAAAAAAAAAAA</p>
 
-    <%= usuarios.forEach((user)=> { %>
-        <p><% user.nome %></p>
-        <p><% user.idade %></p>
-        <p><% user.email %></p>
-    <% }) %>
+<body>
+
+    <main>
+        <h1>Usuarios</h1>
+        <% usuarios.forEach((user)=> { %>
+            <div class="user">
+                <p>
+                    <%= user.nome %>
+                </p>
+                <p>
+                    <%= user.idade %>
+                </p>
+                <p>
+                    <%= user.email %>
+                </p>
+            </div>
+            <% }) %>
+    </main>
+
+    <form action="/registro" method="post">
+        <label>
+            Nome:
+            <input name="nome" type="text" placeholder="Digite seu nome...">
+        </label>
+        <label>
+            Idade:
+            <input name="idade" type="number" placeholder="Digite sua idade...">
+        </label>
+        <label>
+            Email:
+            <input name="email" type="email" placeholder="Digite seu email...">
+        </label>
+        <button type="submit">Criar usuario</button>
+    </form>
 </body>
+
 </html>
